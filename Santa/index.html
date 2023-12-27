@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>santa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="slide" id="slide1" style="background-color: black;">
+    <div class="Ans" contenteditable="true" style="outline:none;"></div>
+</div>
+
+<div class="slide" id="slide2" style="background-color: #000000; text-align: center;">
+    <img src="" alt="Image for Slide 2" style="max-width: 100%; max-height: 100%;">
+</div>
+
+<div class="slide" id="slide3" style="background-color: #000000; text-align: center;">
+    <img src="" alt="Image for Slide 3" style="max-width: 100%; max-height: 100%;">
+</div>
+
+<div class="slide" id="slide4" style="background-color: #000000; text-align: center;">
+    <img src="" alt="Image for Slide 4" style="max-width: 100%; max-height: 100%;">
+</div>
+
+<div class="slide" id="slide5" style="background-color: #000000; text-align: center;">
+    <img src="" alt="Image for Slide 5" style="max-width: 100%; max-height: 100%;">
+</div>
+
+<!-- Arrow button in the right-top corner -->
+<div id="arrow-button" style="position: fixed; top: 10px; right: 10px; cursor: pointer; font-size: 24px; color: white;">➡️</div>
+
+<script>
+  var currentSlide = 1;
+  var totalSlides = document.getElementsByClassName('slide').length;
+
+  showSlide(currentSlide);
+
+  // Add click event listener to the arrow button
+  document.getElementById('arrow-button').addEventListener('click', function() {
+    navigateSlide(1); // Move to the next slide
+  });
+
+  // Add input event listener to check for keywords in .Ans
+  document.querySelector('.Ans').addEventListener('input', function() {
+    checkKeyword(this.textContent.trim());
+  });
+
+  function navigateSlide(direction) {
+    currentSlide += direction;
+
+    if (currentSlide < 1) {
+      currentSlide = totalSlides;
+    } else if (currentSlide > totalSlides) {
+      currentSlide = 1;
+    }
+
+    showSlide(currentSlide);
+  }
+
+  function showSlide(slideIndex) {
+    for (var i = 1; i <= totalSlides; i++) {
+      var slide = document.getElementById('slide' + i);
+      slide.style.display = (i === slideIndex) ? 'block' : 'none';
+    }
+  }
+
+  function checkKeyword(keyword) {
+    switch (keyword) {
+      case '가위바위보':
+        window.location.href = 'fileA.html'; // Replace with the actual file path
+        break;
+      case '16':
+        window.location.href = 'fileB.html'; // Replace with the actual file path
+        break;
+      case '1000':
+        window.location.href = 'fileC.html'; // Replace with the actual file path
+        break;
+      case '-993':
+        window.location.href = 'fileD.html'; // Replace with the actual file path
+        break;
+      default:
+        // Do nothing for other keywords
+        break;
+    }
+  }
+</script>
+
+</body>
+</html>

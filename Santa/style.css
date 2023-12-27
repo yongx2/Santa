@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  font-size: 24px;
+  line-height: 100vh;
+}
+
+.Ans {
+  width: 60vw;
+  height: 30vh;
+  background: black;
+  border-bottom: 3px solid white;
+  font-size: 13vw;
+  color: white;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Password1 {
+  color: white;
+  font-size: 2000%;
+  text-align: center;
+}
+
+.Password2 {
+  color: white;
+  font-size: 2000%;
+  text-align: center;
+}
+
+.Password3 {
+  color: white;
+  font-size: 2000%;
+  text-align: center;
+}
+
+.Password4 {
+  color: white;
+  font-size: 2000%;
+  text-align: center;
+}
